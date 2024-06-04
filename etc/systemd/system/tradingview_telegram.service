@@ -1,0 +1,14 @@
+[Unit]
+Description=TradingView to Telegram Flask API server
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/home/tony/tradingview_telegram
+ExecStart=/usr/bin/python3 flask_runner.py
+Restart=always
+EnvironmentFile=/etc/environment
+
+[Install]
+WantedBy=multi-user.target
